@@ -8,9 +8,7 @@
       content="Entdecke, warum Alina zu den erfolgreichsten OnlyFans Creatorinnen Deutschlands gehört. ASMR, Rollenspiele & Fetisch-Content erwarten Dich.">
     <title>Alina – OnlyFans erfolgreichste Frau?</title>
     <style>
-      /* ================================= */
-      /* ==== CSS UTAMA & DASAR ==== */
-      /* ================================= */
+      /* CSS */
       * {
         margin: 0;
         padding: 0;
@@ -55,6 +53,29 @@
         z-index: 2;
       }
 
+      .price-info {
+        margin-top: 30px;
+        padding: 20px;
+        background: linear-gradient(135deg, rgba(255, 107, 157, 0.05), rgba(78, 205, 196, 0.1));
+        border-left: 4px solid #4ecdc4;
+        border-radius: 0 10px 10px 0;
+        font-size: 1.05rem;
+        line-height: 1.7;
+        position: relative;
+      }
+
+      .price-info::before {
+        content: '💰';
+        position: absolute;
+        left: -18px;
+        top: 15px;
+        font-size: 1.5rem;
+        background: #1a1a2e;
+        border-radius: 50%;
+        padding: 5px;
+        line-height: 1;
+      }
+
       .nav {
         display: flex;
         justify-content: space-between;
@@ -91,18 +112,11 @@
         padding: 40px 20px 0 20px;
       }
 
-      /* ============================================ */
-      /* ==== CSS KARTU MODEL UNGGULAN (ALINA) ==== */
-      /* ============================================ */
+      /* css for alina */
       .featured-model-card {
-        max-width: 500px;
-        margin: 40px auto;
         background: linear-gradient(145deg, #1a1a2e 0%, #2d1b3d 100%);
-        border: 2px solid;
-        border-image: linear-gradient(45deg, #ff6b9d, #4ecdc4, #ffd93d) 1;
-        border-radius: 25px;
+        border-radius: 23px;
         overflow: hidden;
-        box-shadow: 0 25px 60px rgba(255, 107, 157, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1);
         position: relative;
       }
 
@@ -132,6 +146,7 @@
       .card-image-slider {
         position: relative;
         overflow: hidden;
+
       }
 
       .slider-track {
@@ -201,14 +216,23 @@
         box-shadow: 0 0 10px rgba(255, 107, 157, 0.5);
       }
 
+      .highlight-number {
+        font-weight: 800;
+        font-size: 1.2em;
+        background: linear-gradient(45deg, #ff6b9d, #4ecdc4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        padding: 0 0.1em;
+        text-shadow: 0 0 10px rgba(255, 107, 157, 0.3);
+      }
+
       .featured-model-card .creator-info {
         padding: 35px;
         background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(45, 27, 61, 0.9));
       }
 
-      /* ======================================================= */
-      /* ==== CSS LAYOUT ARTIKEL BERVARIASI ==== */
-      /* ======================================================= */
+      /* css layout */
       .article-content {
         max-width: 1000px;
         margin: 0 auto;
@@ -219,12 +243,18 @@
         font-weight: 900;
         margin-bottom: 25px;
         line-height: 1.2;
-        background: linear-gradient(45deg, #ff6b9d, #4ecdc4, #ffd93d);
+        background-image: radial-gradient(circle at var(--x, 50%) var(--y, 50%),
+            #ff6b9d 0%,
+            #4ecdc4 50%,
+            #ffd93d 100%);
+        background-size: 200% 200%;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         text-align: center;
         text-shadow: 0 0 30px rgba(255, 107, 157, 0.3);
+        position: relative;
+        transition: background-position 0.1s ease;
       }
 
       .intro-text p {
@@ -235,7 +265,6 @@
         line-height: 1.7;
       }
 
-      /* Topic Layouts - Different for each section */
       .article-topic {
         margin: 70px 0;
         display: grid;
@@ -244,12 +273,43 @@
         min-height: 400px;
       }
 
-      /* Layout 1: Standard side-by-side */
       .article-topic.layout-standard {
         grid-template-columns: 1fr 1fr;
       }
 
-      /* Layout 2: Floating image with text wrap */
+      .community-points {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 25px;
+      }
+
+      .community-points li {
+        font-size: 1.1rem;
+        padding-left: 35px;
+        position: relative;
+        margin-bottom: 20px;
+      }
+
+      .community-points li::before {
+        content: '✔️';
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 1.5rem;
+        color: #ff6b9d;
+        line-height: 1.2;
+      }
+
+      .card-border-wrapper {
+        max-width: 500px;
+        margin: 40px auto;
+        padding: 2px;
+        background: linear-gradient(45deg, #ff6b9d, #4ecdc4, #ffd93d);
+        border-radius: 25px;
+        position: relative;
+        box-shadow: 0 25px 60px rgba(255, 107, 157, 0.2);
+      }
+
       .article-topic.layout-floating {
         grid-template-columns: 1fr;
         position: relative;
@@ -262,7 +322,13 @@
         shape-outside: circle(50%);
       }
 
-      /* Layout 3: Diagonal split */
+      .custom-separator {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(255, 107, 157, 0), rgba(78, 205, 196, 0.75), rgba(255, 107, 157, 0));
+        margin: 30px 0;
+      }
+
       .article-topic.layout-diagonal {
         grid-template-columns: 1fr 1fr;
         position: relative;
@@ -283,7 +349,6 @@
         pointer-events: none;
       }
 
-      /* Layout 4: Zigzag pattern */
       .article-topic.layout-zigzag {
         grid-template-columns: 2fr 1fr;
         background: linear-gradient(45deg, rgba(78, 205, 196, 0.1), rgba(255, 107, 157, 0.1));
@@ -296,7 +361,6 @@
         transform: skewY(1deg);
       }
 
-      /* Layout 5: Circular focus */
       .article-topic.layout-circular {
         grid-template-columns: 1fr 1fr;
         position: relative;
@@ -472,24 +536,49 @@
       .cta-section {
         margin: 80px auto;
         padding: 60px 40px;
-        background: linear-gradient(135deg, #ff6b9d, #4ecdc4, #ffd93d);
         border-radius: 30px;
         text-align: center;
         position: relative;
         overflow: hidden;
-        box-shadow: 0 25px 50px rgba(255, 107, 157, 0.3);
+        background-color: #0a0a0a;
+        background-image:
+          radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+          radial-gradient(circle at var(--x-cta, 50%) var(--y-cta, 50%), #2d1b3d, #1a1a2e 40%, #0a0a0a 70%);
+        background-size: 20px 20px, 100% 100%;
+
+        /* --- Border Animasi --- */
+        border: 2px solid transparent;
+        background-clip: padding-box;
+        transition: all 0.4s ease;
       }
 
       .cta-section::before {
         content: '';
         position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-        background-size: 20px 20px;
-        animation: moveStars 20s linear infinite;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        margin: -2px;
+        border-radius: inherit;
+        background: linear-gradient(135deg, #ff6b9d, #4ecdc4, #ff6b9d);
+        background-size: 200% 200%;
+        animation: border-flow 4s linear infinite;
+      }
+
+      @keyframes border-flow {
+        0% {
+          background-position: 0% 50%;
+        }
+
+        50% {
+          background-position: 100% 50%;
+        }
+
+        100% {
+          background-position: 0% 50%;
+        }
       }
 
       @keyframes moveStars {
@@ -510,31 +599,35 @@
       .cta-section h2 {
         font-size: 2.5rem;
         font-weight: 900;
-        color: #1a1a2e;
+        color: #ffffff;
         margin-bottom: 20px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        text-shadow: 0 0 15px rgba(255, 107, 157, 0.7), 0 0 25px rgba(78, 205, 196, 0.5);
       }
 
       .cta-section p {
         font-size: 1.3rem;
-        color: #1a1a2e;
+        color: #e0e0e0;
         margin-bottom: 35px;
-        font-weight: 600;
+        font-weight: 400;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .cta-button {
         display: inline-block;
-        background: #1a1a2e;
+        background: linear-gradient(45deg, #ff6b9d, #ff6b6b);
         color: white;
         padding: 20px 50px;
         font-size: 1.3rem;
         font-weight: 700;
         text-decoration: none;
         border-radius: 50px;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        border: 3px solid transparent;
+        border: none;
         position: relative;
-        overflow: hidden;
+        overflow: visible;
+        box-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
       .cta-button::before {
@@ -550,8 +643,7 @@
 
       .cta-button:hover {
         transform: translateY(-5px) scale(1.05);
-        box-shadow: 0 15px 30px rgba(26, 26, 46, 0.4);
-        border-color: #ffffff;
+        box-shadow: 0 0 35px rgba(255, 107, 157, 0.8), 0 0 15px rgba(255, 107, 97, 0.6);
       }
 
       .cta-button:hover::before {
@@ -592,9 +684,7 @@
         margin-bottom: 15px;
       }
 
-      /* ================================================= */
-      /* ==== CSS DAFTAR MODEL & PAGINASI ==== */
-      /* ================================================= */
+      /* css model and pagination */
       .creators-section {
         margin-top: 100px;
       }
@@ -703,6 +793,36 @@
         overflow: hidden;
       }
 
+      .final-cta {
+        margin-top: 30px;
+        padding-top: 25px;
+        border-top: 1px solid rgba(255, 107, 157, 0.3);
+        text-align: center;
+      }
+
+      .final-cta p {
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+      }
+
+      .cta-button-small {
+        display: inline-block;
+        background: linear-gradient(45deg, #ff6b9d, #4ecdc4);
+        color: white;
+        padding: 12px 30px;
+        font-size: 1rem;
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: 50px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
+      }
+
+      .cta-button-small:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 10px 25px rgba(255, 107, 157, 0.4);
+      }
+
       .btn-primary:hover {
         transform: translateY(-2px);
         box-shadow: 0 10px 25px rgba(255, 107, 157, 0.3);
@@ -790,9 +910,14 @@
         z-index: -1;
       }
 
-      .image-strip-container img:hover {
-        transform: scale(1.05) rotate(2deg);
-        box-shadow: 0 10px 25px rgba(255, 107, 157, 0.3);
+      .image-strip-container div:nth-child(odd) img:hover {
+        transform: translateY(-5px) scale(1.07) rotate(3deg);
+        box-shadow: 0 15px 30px rgba(255, 107, 157, 0.4);
+      }
+
+      .image-strip-container div:nth-child(even) img:hover {
+        transform: translateY(-5px) scale(1.07) rotate(-3deg);
+        box-shadow: 0 15px 30px rgba(78, 205, 196, 0.4);
       }
 
       .split-content-section {
@@ -808,14 +933,18 @@
         position: sticky;
         top: 100px;
         z-index: 2;
+        padding: 3px;
+        background: linear-gradient(45deg, #ff6b9d, #4ecdc4, #ffd93d);
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(255, 107, 157, 0.3);
+        animation: floatAnimation 6s ease-in-out infinite;
       }
+
 
       .center-image-overlay img {
         width: 100%;
-        border-radius: 20px;
-        border: 3px solid;
-        border-image: linear-gradient(45deg, #ff6b9d, #4ecdc4, #ffd93d) 1;
-        box-shadow: 0 15px 35px rgba(255, 107, 157, 0.3);
+        border-radius: 17px;
+        display: block;
       }
 
       .split-text-left,
@@ -832,6 +961,16 @@
         border-radius: 30px;
         position: relative;
         overflow: hidden;
+      }
+
+      .archive-text p:first-of-type::first-letter {
+        font-size: 4rem;
+        font-weight: 900;
+        color: #ff6b9d;
+        float: left;
+        margin-right: 0.2em;
+        line-height: 0.8;
+        padding-top: 0.1em;
       }
 
       .archive-grid {
@@ -854,7 +993,6 @@
         height: 100%;
         object-fit: cover;
         border-radius: 15px;
-        border: 2px solid;
         border-image: linear-gradient(45deg, #ff6b9d, #4ecdc4) 1;
         transition: all 0.3s ease;
         cursor: pointer;
@@ -903,33 +1041,42 @@
         right: 0;
         bottom: 0;
         pointer-events: none;
-        z-index: 1;
+        z-index: 30;
       }
 
       .float-img {
         position: absolute;
         border-radius: 20px;
-        border: 3px solid;
-        border-image: linear-gradient(45deg, #ff6b9d, #4ecdc4) 1;
-        opacity: 0.3;
+        /* border: 3px solid;
+        border-image: linear-gradient(45deg, #ff6b9d, #4ecdc4) 1; */
+        opacity: 1;
         animation: float 8s ease-in-out infinite;
-        box-shadow: 0 10px 30px rgba(255, 107, 157, 0.2);
+        overflow: hidden;
+        /* box-shadow: 0 10px 30px rgba(255, 107, 157, 0.2); */
+      }
+
+      .float-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: 20px;
       }
 
       .float-1 {
         top: 5%;
-        right: 10%;
-        width: 120px;
-        height: 160px;
+        right: 2%;
+        width: 80px;
+        height: 110px;
         object-fit: cover;
         animation-delay: 0s;
       }
 
       .float-2 {
-        bottom: 20%;
-        left: 15%;
-        width: 100px;
-        height: 130px;
+        bottom: 3%;
+        left: 3%;
+        width: 80px;
+        height: 110px;
         object-fit: cover;
         animation-delay: 4s;
       }
@@ -946,15 +1093,50 @@
         }
       }
 
+      @keyframes floatAnimation {
+        0% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-20px);
+        }
+
+        100% {
+          transform: translateY(0);
+        }
+      }
+
       .success-content {
         position: relative;
         z-index: 3;
-        background: rgba(26, 26, 46, 0.95);
+        background: linear-gradient(135deg, rgba(26, 26, 46, 0.6), rgba(45, 27, 61, 0.7));
+        backdrop-filter: blur(10px) saturate(120%);
+        -webkit-backdrop-filter: blur(10px) saturate(120%);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         padding: 40px;
         border-radius: 20px;
-        backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 107, 157, 0.2);
+        overflow: hidden;
       }
+
+      .success-content::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: var(--y-glow, 50%);
+        left: var(--x-glow, 50%);
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(255, 107, 157, 0.2) 0%, transparent 70%);
+        opacity: 0;
+        transition: opacity 0.5s;
+      }
+
+      .success-content:hover::before {
+        opacity: 1;
+      }
+
 
       .footer {
         background: linear-gradient(135deg, #1a1a2e, #2d1b3d);
@@ -1211,29 +1393,29 @@
 
     <main class="main-content">
       <div class="article-content">
-        <h1>OnlyFans' erfolgreichste Frau in Deutschland? Die bezaubernde Alina könnte es sein</h1>
+        <h1>OnlyFans’ erfolgreichste Frau in Deutschland? Die bezaubernde Alina könnte es sein</h1>
         <div class="intro-text">
           <p>In der Welt der Erotik-Plattformen gibt es viele aufstrebende Stars, doch nur wenige schaffen es, sich
             langfristig auf der Social Media Plattform OnlyFans durchzusetzen. Promis dominieren die Szene. Dabei sind
-            es
-            gerade die echten, authentischen Mädchen von nebenan, die deutsche OF-Zuschauer besonders reizen.</p>
+            es gerade die echten, authentischen Mädchen von nebenan, die deutsche OF-Zuschauer besonders reizen.
+          </p>
           <p>Das ist auch der Hauptgrund, warum eine der erfolgreichsten OnlyFans Creatorinnen Deutschlands eine
-            nahbare,
-            natürliche Schönheit ist. Ihr Name ist Alina.</p>
+            nahbare, natürliche Schönheit ist. Ihr Name ist Alina.</p>
           <p>Die aufstrebende junge Creatorin begeistert seit 2021 ihre Fans mit hochwertigem Content und heißen Fotos
             aus dem Alltag – und hebt sich dabei deutlich von anderen OnlyFans Models ab.</p>
           <p>Doch was macht Alina so besonders? Warum zählt ihr Account zu den erfolgreichsten OnlyFans Accounts
             Deutschlands? Wir werfen einen genaueren Blick auf ihren Erfolg und ihre Community.</p>
         </div>
+        <div class="card-border-wrapper">
 
-        <div class="featured-model-card" id="featured-card">
-          <!-- Kartu Slider Interaktif akan diisi oleh JavaScript -->
+          <div class="featured-model-card" id="featured-card">
+          </div>
+
         </div>
-
         <div class="article-topic layout-standard">
           <div class="topic-image">
             <img
-              src="https://images.pexels.com/photos/1382731/pexels-photo-1382731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              src="https://plus.unsplash.com/premium_photo-1667030474693-6d0632f97029?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Alina's Passion">
           </div>
           <div class="topic-text">
@@ -1259,14 +1441,12 @@
         <div class="image-strip-section">
           <div class="image-strip-container">
             <div><img
-                src="https://images.pexels.com/photos/1036627/pexels-photo-1036627.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+                src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=415&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Alina ASMR"></div>
-            <div><img
-                src="https://images.pexels.com/photos/3756879/pexels-photo-3756879.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
-                alt="Alina Content"></div>
-            <div><img
-                src="https://images.pexels.com/photos/3767433/pexels-photo-3767433.jpeg?auto=compress&cs=tinysrgb&w=250&h=350&dpr=1"
-                alt="Alina Videos"></div>
+            <div><img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?q=80&w=436&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+                " alt="Alina Content"></div>
+            <div><img src="https://plus.unsplash.com/premium_photo-1677545183884-421157b2da02?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+                " alt="Alina Videos"></div>
           </div>
           <div class="topic-text">
             <h2>Erfolgreichste OnlyFans Accounts haben alles: ASMR, Fetisch und mehr</h2>
@@ -1302,10 +1482,10 @@
           </div>
         </div>
 
-        <div class="full-width-break"
+        <!-- <div class="full-width-break"
           style="background-image: url('https://images.pexels.com/photos/3756879/pexels-photo-3756879.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
           <h2>Ein gigantisches Video-Archiv mit über 250 Videos</h2>
-        </div>
+        </div> -->
 
         <!-- Split Text with Overlay Image -->
         <div class="split-content-section">
@@ -1314,17 +1494,18 @@
             <p>Nicht nur bei Fetisch-Inhalten ist Alina offen. Sie erfüllt generell gerne die Wünsche ihrer Community?
               Dir schwebt eine bestimmte sinnliche Szenerie vor? Alina geht gerne gezielt auf Deine Wünsche ein und
               produziert personalisierten Content. Extra für Dich!</p>
+            <hr class="custom-separator">
             <p>Übrigens: Alina bietet auch regelmäßige Livestreams an, in denen sie mit ihrer Community interagiert.</p>
           </div>
           <div class="center-image-overlay">
-            <img
-              src="https://images.pexels.com/photos/3772510/pexels-photo-3772510.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&dpr=1"
-              alt="Alina Custom Content">
+            <img src="https://images.unsplash.com/photo-1472491235688-bdc81a63246e?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+              " alt="Alina Custom Content">
           </div>
           <div class="split-text-right">
             <h3>Exklusive Behind-the-Scenes-Clips</h3>
             <p>Hochglanz, übertriebene Fotobearbeitung und Fakes suchst Du bei Alina vergebens. Sie ist und bleibt
               authentisch. In ihren Videos, Bildern und auch in ihren privaten Chat-Nachrichten.</p>
+            <hr class="custom-separator">
             <p>Deshalb nimmt die OF-Creatorin ihre Fans gerne auch mal mit hinter die Kulissen ihrer Produktionen. So
               bist auch Du Teil ihres kreativen Prozesses.</p>
           </div>
@@ -1339,26 +1520,28 @@
                 <p>Jede Woche nur ein Foto? Nein! Bei Alina bekommst Du wirklich viel Content. Das unterscheidet sie von
                   anderen OnlyFans Creatorinnen: die schiere Menge an Bildern und Videos, die sie für ihre Abonnenten
                   produziert.</p>
-                <p>Mittlerweile zählt ihre Videobibliothek über 250 Videos. Damit bietet sie für jeden Geschmack und
+                <hr>
+                <p>Mittlerweile zählt ihre Videobibliothek über <span class="highlight-number">250 Videos</span>. Damit
+                  bietet sie für jeden Geschmack und
                   jede Vorliebe das passende Material. Ihr Portfolio deckt sämtliche Kategorien ab, von intimen
                   ASMR-Sessions über aufwendige Rollenspiele bis hin zu spezialisierten Fetisch-Videos.</p>
+                <hr>
                 <p>Alina legt großen Wert darauf, dass ihr Content sowohl qualitativ als auch quantitativ überzeugt. Sie
                   gibt ihren Fans das Gefühl, tief in die Szene eintauchen zu können.</p>
-                <p>Dank ihrer hohen Veröffentlichungsrate gibt es auf ihrem Account ständig neue Inhalte zu entdecken –
-                  und das zu einem besonders günstigen Preis. Das Abo beginnt bei weniger als 8 Dollar (zzgl. Steuern).
+                <p class="price-info">Dank ihrer hohen Veröffentlichungsrate gibt es auf ihrem Account ständig neue
+                  Inhalte zu entdecken –
+                  und das zu einem besonders günstigen Preis. Das Abo beginnt bei weniger als <span
+                    class="highlight-number">8 Dollar</span> (zzgl. Steuern).
                 </p>
               </div>
               <div class="archive-photos">
                 <div class="photo-stack">
-                  <img
-                    src="https://images.pexels.com/photos/3767433/pexels-photo-3767433.jpeg?auto=compress&cs=tinysrgb&w=250&h=350&dpr=1"
-                    alt="Alina Archive 1" class="stack-photo photo-1">
-                  <img
-                    src="https://images.pexels.com/photos/1898555/pexels-photo-1898555.jpeg?auto=compress&cs=tinysrgb&w=250&h=350&dpr=1"
-                    alt="Alina Archive 2" class="stack-photo photo-2">
-                  <img
-                    src="https://images.pexels.com/photos/1115680/pexels-photo-1115680.jpeg?auto=compress&cs=tinysrgb&w=250&h=350&dpr=1"
-                    alt="Alina Archive 3" class="stack-photo photo-3">
+                  <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+                    " alt="Alina Archive 1" class="stack-photo photo-1">
+                  <img src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+                    " alt="Alina Archive 2" class="stack-photo photo-2">
+                  <img src="https://plus.unsplash.com/premium_photo-1664299749481-ac8dc8b49754?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+                    " alt="Alina Archive 3" class="stack-photo photo-3">
                 </div>
               </div>
             </div>
@@ -1367,33 +1550,32 @@
 
         <div class="article-topic layout-diagonal">
           <div class="topic-image">
-            <img
-              src="https://images.pexels.com/photos/3767433/pexels-photo-3767433.jpeg?auto=compress&cs=tinysrgb&w=250&h=350&dpr=1"
-              alt="Alina's Community">
+            <img src="https://scontent-cgk1-2.cdninstagram.com/v/t51.75761-15/504476866_17979620417844745_410163277959137817_n.jpg?stp=dst-jpg_e15_tt6&_nc_cat=108&ig_cache_key=MzY0OTQ3OTcxOTMyMTU3MDQxMw%3D%3D.3-ccb1-7&ccb=1-7&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjExMjV4MjAwMC5zZHIuQzMifQ%3D%3D&_nc_ohc=zH8fwWt6Qi4Q7kNvwFEab87&_nc_oc=AdnjU3DhoNGZUqIH2UxwJxxfvZNkE9sb40s7FuDn8C9N6gqIEAjYyhJxFujSTnZLLd4&_nc_ad=z-m&_nc_cid=1225&_nc_zt=23&_nc_ht=scontent-cgk1-2.cdninstagram.com&_nc_gid=Na9JIvBdRNO5Hkpu2xpiYg&oh=00_Afap4g0g5CZ8hjQZjphjlJ9fRbxY2OnGmTBvBZERLZVS-A&oe=68D48F37
+              " alt="Alina's Community">
           </div>
           <div class="topic-text topic-content">
             <h2>Das Herzstück ihres Schaffens: Alinas Community</h2>
-            <p>Die Mehrheit von Alinas Followern sind Männer im Alter von 25 bis 45 Jahren, aber auch jüngere und ältere
-              Abonnenten sind vertreten.</p>
-            <p>Die Vorlieben der Fans sind breit gefächert, doch vor allem ASMR, Rollenspiele und Fetisch-Themen stehen
-              hoch im Kurs. Ein weiterer Grund für Alinas Popularität: Sie bietet hochwertigen Content zu günstigen
-              Preisen an, da sie ihre Arbeit aus Spaß und Leidenschaft macht.</p>
-            <p>Ihre Fans schätzen besonders, dass sie auf ihre Wünsche eingeht und individuellen Content erstellt.</p>
+            <ul class="community-points">
+              <li>Die Mehrheit ihrer Follower sind Männer im Alter von <strong>25 bis 45 Jahren</strong>.</li>
+              <li>Die beliebtesten Inhalte sind <strong>ASMR, Rollenspiele und Fetisch-Themen</strong>.</li>
+              <li>Fans schätzen besonders ihre <strong>persönliche Interaktion</strong> und die Erstellung von
+                individuellem Content.</li>
+              <li>Sie bietet hochwertigen Content zu <strong>günstigen Preisen</strong>, angetrieben von ihrer
+                Leidenschaft.</li>
+            </ul>
           </div>
         </div>
 
-        <!-- Success Section with Floating Elements -->
+        <!-- Success Section -->
         <div class="success-section">
           <div class="floating-images">
             <div class="float-img float-1">
-              <img
-                src="https://images.pexels.com/photos/1308881/pexels-photo-1308881.jpeg?auto=compress&cs=tinysrgb&w=200&h=300&dpr=1"
-                alt="Alina Success 1">
+              <img src="https://images.unsplash.com/photo-1478098711619-5ab0b478d6e6?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+                " alt="Alina Success 1">
             </div>
             <div class="float-img float-2">
-              <img
-                src="https://images.pexels.com/photos/3772510/pexels-photo-3772510.jpeg?auto=compress&cs=tinysrgb&w=150&h=200&dpr=1"
-                alt="Alina Success 2">
+              <img src="https://images.unsplash.com/photo-1503777119540-ce54b422baff?q=80&w=386&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+                " alt="Alina Success 2">
             </div>
           </div>
           <div class="success-content">
@@ -1404,10 +1586,12 @@
             <p>Ihr Account ist nicht nur einer von vielen auf der Plattform OnlyFans, sondern eine Erlebniswelt für ihre
               Community. Mit ihrem vielfältigen Content, ihrer hochwertigen Produktion und ihrer direkten
               Fan-Interaktion setzt sie Maßstäbe in der Branche.</p>
-            <p>Für alle, die sich für die erfolgreichsten OnlyFans Creator Deutschlands interessieren oder einen Blick
-              hinter die Kulissen der Erotik-Plattform werfen wollen, ist Alinas Profil definitiv einen Besuch wert!
-              Schau also gerne vorbei und lerne den Menschen Alina persönlich im Chat kennen. Hier lässt sich ebenfalls
-              gerne die Hüllen für Dich fallen.</p>
+
+            <!-- UBAH PARAGRAF TERAKHIR MENJADI INI -->
+            <div class="final-cta">
+              <p>Neugierig geworden? Lerne Alina persönlich im Chat kennen und entdecke ihre exklusive Welt.</p>
+              <a href="#" class="cta-button-small">Jetzt Profil besuchen</a>
+            </div>
           </div>
         </div>
 
@@ -1467,9 +1651,31 @@
     </footer>
 
     <script>
-      // ======================================
-      // ==== DATA MODEL & HELPER FUNCTIONS ====
-      // ======================================
+      // radial gradien
+      const interactiveTitle = document.querySelector('.article-content h1');
+
+      if (interactiveTitle) {
+        interactiveTitle.addEventListener('mousemove', (e) => {
+          // Menghitung posisi kursor (0-100) relatif terhadap elemen h1
+          const rect = interactiveTitle.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          const xPercent = (x / rect.width) * 100;
+          const yPercent = (y / rect.height) * 100;
+
+          // Memperbarui variabel CSS
+          interactiveTitle.style.setProperty('--x', `${xPercent}%`);
+          interactiveTitle.style.setProperty('--y', `${yPercent}%`);
+        });
+
+        // (Opsional) Reset posisi saat kursor meninggalkan elemen
+        interactiveTitle.addEventListener('mouseleave', () => {
+          interactiveTitle.style.setProperty('--x', '50%');
+          interactiveTitle.style.setProperty('--y', '50%');
+        });
+      }
+      // data model
       const modelData = [];
       const baseModels = [
         { name: "Alina ✨", category: "Solo", subs: 2520, views: 3100, rating: 4.9 },
@@ -1510,16 +1716,14 @@
         return '★'.repeat(fullStars) + '☆'.repeat(5 - fullStars);
       }
 
-      // ===================================================
-      // ==== LOGIKA KARTU UNGGULAN (ALINA) ====
-      // ===================================================
+      // alina card logic
       function setupFeaturedCard() {
         const featuredImages = [
-          "https://images.pexels.com/photos/1898555/pexels-photo-1898555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          "https://images.pexels.com/photos/1115680/pexels-photo-1115680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          "https://images.pexels.com/photos/1308881/pexels-photo-1308881.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          "https://images.pexels.com/photos/3772510/pexels-photo-3772510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          "https://images.pexels.com/photos/3767433/pexels-photo-3767433.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          "https://images.unsplash.com/photo-1568540825978-73021c06dad6?q=80&w=784&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://plus.unsplash.com/premium_photo-1685189791603-c5ee785d4bad?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://plus.unsplash.com/premium_photo-1663126998711-fb983aa0ecab?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1676856561653-f2692432441b?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://plus.unsplash.com/premium_photo-1663127024601-c081efb6f4d9?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ];
 
         const cardNode = document.getElementById('featured-card');
@@ -1603,9 +1807,7 @@
         }, 5000);
       }
 
-      // ===================================================
-      // ==== LOGIKA DAFTAR MODEL DI BAWAHNYA ====
-      // ===================================================
+      // model logic
       let filteredModels = [...otherModels];
       let currentPage = 1;
       let itemsPerPage = 12;
@@ -1685,6 +1887,40 @@
         currentPage = 1;
         renderOtherModels();
       }
+      const successBox = document.querySelector('.success-content');
+
+      if (successBox) {
+        successBox.addEventListener('mousemove', (e) => {
+          const rect = successBox.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          successBox.style.setProperty('--x-glow', `${x}px`);
+          successBox.style.setProperty('--y-glow', `${y}px`);
+        });
+      }
+
+      // cta script
+      const ctaSection = document.querySelector('.cta-section');
+
+      if (ctaSection) {
+        ctaSection.addEventListener('mousemove', (e) => {
+          const rect = ctaSection.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          const xPercent = (x / rect.width) * 100;
+          const yPercent = (y / rect.height) * 100;
+
+          ctaSection.style.setProperty('--x-cta', `${xPercent}%`);
+          ctaSection.style.setProperty('--y-cta', `${yPercent}%`);
+        });
+
+        ctaSection.addEventListener('mouseleave', () => {
+          ctaSection.style.setProperty('--x-cta', '50%');
+          ctaSection.style.setProperty('--y-cta', '50%');
+        });
+      }
 
       // ==== Photo Stack Click Functionality ====
       function setupPhotoStack() {
@@ -1692,19 +1928,15 @@
         if (!photoStack) return;
 
         const photos = photoStack.querySelectorAll('.stack-photo');
-        let currentOrder = [1, 2, 3]; // z-index order
+        let currentOrder = [1, 2, 3];
 
         photoStack.addEventListener('click', () => {
-          // Rotate the order array
           const firstIndex = currentOrder.shift();
           currentOrder.push(firstIndex);
 
-          // Update z-index and transforms
           photos.forEach((photo, index) => {
             const newZIndex = currentOrder[index];
             photo.style.zIndex = newZIndex;
-
-            // Apply different transforms based on z-index
             if (newZIndex === 3) {
               photo.style.transform = 'rotate(-2deg) translateX(10px)';
             } else if (newZIndex === 2) {
@@ -1716,10 +1948,10 @@
         });
       }
 
-      // ==== Inisialisasi ====
+      //  int
       document.addEventListener('DOMContentLoaded', () => {
         setupFeaturedCard();
-        setupPhotoStack(); // Add this line
+        setupPhotoStack();
         document.getElementById('sort-dropdown').addEventListener('change', (e) => sortOtherModels(e.target.value));
         sortOtherModels('rank');
       });
